@@ -1,5 +1,6 @@
 plugins {
     id 'org.hidetake.swagger.generator' version '2.10.0'
+    id 'com.williamhill.wiremock' version '0.4.1'
 }
 
 repositories {
@@ -15,6 +16,11 @@ swaggerSources {
     api {
         inputFile = file('doc/swagger/swagger.yml')
     }
+}
+
+wiremock {
+    dir file('wiremock/')
+    params "--port=8082"
 }
 
 group 'com.dev0xff'
