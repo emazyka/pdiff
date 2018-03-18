@@ -1,0 +1,38 @@
+buildscript {
+    dependencies {
+        classpath builds.gradlePluginSpringBoot
+        classpath builds.gradlePluginKotlin
+        classpath builds.gradlePluginKotlinAllOpen
+    }
+}
+
+apply plugin: 'kotlin-spring'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+    compile project(":web-service:web-service-api")
+
+    compile libs.springActuator
+    compile libs.springJpa
+    compile libs.springJersey
+    compile libs.springMail
+    compile libs.jaxb
+
+    compile libs.kotlinJackson
+    compile libs.kotlinReflect
+    
+    runtime libs.springDevTools
+    runtime libs.springH2
+
+    testCompile libs.springBootTest
+
+
+}
+
+bootJar {
+    mainClassName = 'com.dev0xff.pdiff.PDiffApplication'
+}
+
+
+

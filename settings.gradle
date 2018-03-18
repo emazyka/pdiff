@@ -1,3 +1,5 @@
 rootProject.name = 'pdiff'
-
 include ':web-ui'
+include ':web-service'
+include ':web-service:web-service-api'
+include ':web-service:web-service-internal'

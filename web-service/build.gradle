@@ -1,0 +1,25 @@
+buildscript {
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin")
+    }
+}
+
+subprojects {
+    apply plugin: 'kotlin'
+    apply plugin: 'idea'
+
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = versions.java
+        }
+    }
+    compileTestKotlin {
+        kotlinOptions {
+            jvmTarget = versions.java
+        }
+    }
+
+    dependencies {
+        compile libs.kotlinStdLib
+    }
+}
