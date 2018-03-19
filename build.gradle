@@ -29,8 +29,6 @@ apply plugin: 'idea'
 
 apply from: "gradle/dependencies.gradle"
 
-mainClassName = 'com.dev0xff.pdiff.PDiffApplication'
-
 subprojects {
     group 'com.dev0xff'
     version '1.0-SNAPSHOT'
